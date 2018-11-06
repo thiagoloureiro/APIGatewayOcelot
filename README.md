@@ -6,3 +6,4 @@
  - Ocelot
  - Consul Service Discovery
  - Load Balance
+ - JWT (Json Web Tokens)

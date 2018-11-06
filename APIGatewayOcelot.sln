@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGatewayOcelot", "APIGate
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValuesAPI", "TestAPI\ValuesAPI.csproj", "{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer", "AuthServer\AuthServer.csproj", "{EDB6BA51-771A-492E-8024-A3DDF5883FAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB6BA51-771A-492E-8024-A3DDF5883FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB6BA51-771A-492E-8024-A3DDF5883FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB6BA51-771A-492E-8024-A3DDF5883FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB6BA51-771A-492E-8024-A3DDF5883FAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -21,7 +21,7 @@
         [HttpGet]
         public IActionResult Get(string name, string pwd)
         {
-            if (name == "gigpay" && pwd == "123")
+            if (name == "user" && pwd == "123")
             {
                 var now = DateTime.UtcNow;
 

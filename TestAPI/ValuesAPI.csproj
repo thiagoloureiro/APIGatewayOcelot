@@ -5,22 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\**" />
-    <Compile Remove="wwwroot\**" />
-    <Content Remove="Controllers\**" />
-    <Content Remove="wwwroot\**" />
-    <EmbeddedResource Remove="Controllers\**" />
-    <EmbeddedResource Remove="wwwroot\**" />
-    <None Remove="Controllers\**" />
-    <None Remove="wwwroot\**" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Consul" Version="0.7.2.6" />
+    <PackageReference Include="Megaphone.DotnetCore.WebApi" Version="0.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
-    <PackageReference Include="Ocelot" Version="12.0.1" />
-    <PackageReference Include="Ocelot.Provider.Consul" Version="0.1.2" />
   </ItemGroup>
 
 </Project>

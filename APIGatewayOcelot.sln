@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGatewayOcelot", "APIGatewayOcelot\APIGatewayOcelot.csproj", "{CD97C901-C280-462D-91F1-7C3B5F7E0D77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGatewayOcelot", "APIGatewayOcelot\APIGatewayOcelot.csproj", "{CD97C901-C280-462D-91F1-7C3B5F7E0D77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValuesAPI", "TestAPI\ValuesAPI.csproj", "{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CD97C901-C280-462D-91F1-7C3B5F7E0D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD97C901-C280-462D-91F1-7C3B5F7E0D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD97C901-C280-462D-91F1-7C3B5F7E0D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC1EF80-ECDB-4616-854F-76EBBC0C36EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

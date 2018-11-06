@@ -3,20 +3,39 @@
     {
       "DownstreamPathTemplate": "/api/values",
       "DownstreamScheme": "http",
-      "UpstreamPathTemplate": "/values",
+      "UpstreamPathTemplate": "/getvalues",
       "UpstreamHttpMethod": [ "Get" ],
-      "ServiceName": "values",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "AuthScheme",
+        "AllowedScopes": []
+      },
+      "ServiceName": "valueapi",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
-      },
-      "UseServiceDiscovery": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth",
+      "DownstreamScheme": "http",
+      "ServiceName": "auth",
+      "UpstreamPathTemplate": "/api/auth",
+      "UpstreamHttpMethod": [ "Get" ]
     }
   ],
   "GlobalConfiguration": {
+    "RequestIdKey": null,
     "ServiceDiscoveryProvider": {
       "Host": "localhost",
       "Port": 8500,
       "Type": "Consul"
-    }
+    },
+    "RateLimitOptions": {
+      "ClientIdHeader": "ClientId",
+      "QuotaExceededMessage": "",
+      "RateLimitCounterPrefix": "",
+      "DisableRateLimitHeaders": false,
+      "HttpStatusCode": 428
+    },
+    "DownstreamScheme": "http"
   }
 }

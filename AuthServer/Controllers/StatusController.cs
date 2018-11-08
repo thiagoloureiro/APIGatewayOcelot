@@ -9,7 +9,6 @@ namespace AuthServer.Controllers
     {
         public string GetStatus()
         {
-            Logger.Information("OK");
             return "OK";
         }
     }

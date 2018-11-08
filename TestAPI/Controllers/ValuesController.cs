@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Megaphone.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +14,9 @@ namespace ValuesAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value12", "value23" };
+            Logger.Information("OK");
+
+            return new string[] { DateTime.Now.ToLongDateString(), DateTime.Now.Second.ToString() };
         }
     }
 }

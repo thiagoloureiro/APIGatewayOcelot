@@ -51,7 +51,7 @@
                     audience: _settings.Value.Aud,
                     claims: claims,
                     notBefore: now,
-                    expires: now.Add(TimeSpan.FromMinutes(2)),
+                    expires: now.Add(TimeSpan.FromMinutes(60)),
                     signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
                 );
                 var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);

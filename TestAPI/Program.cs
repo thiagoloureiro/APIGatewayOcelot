@@ -1,11 +1,12 @@
-﻿using Megaphone.Core;
+﻿using System;
+using Megaphone.Core;
 using Megaphone.Core.ClusterProviders;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using System;
+using TestAPI;
 
-namespace TestAPI
+namespace ValuesAPI
 {
     public class Program
     {

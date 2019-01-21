@@ -4,7 +4,7 @@
 
 [![Build history](https://buildstats.info/appveyor/chart/thiagoloureiro/apigatewayocelot)](https://ci.appveyor.com/project/thiagoloureiro/apigatewayocelot/history)
 
-.NET Core 2.1 API Gateway
+.NET Core 2.2 API Gateway
  - Ocelot
  - Consul Service Discovery
  - Load Balance

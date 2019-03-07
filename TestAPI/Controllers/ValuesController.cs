@@ -10,13 +10,13 @@ namespace ValuesAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        [Authorize]
+
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             Logger.Information("OK");
 
-            return new string[] { DateTime.Now.ToLongDateString(), DateTime.Now.Second.ToString() };
+            return new string[] { Program.uniqueid };
         }
     }
 }

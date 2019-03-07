@@ -10,8 +10,11 @@ namespace ValuesAPI
 {
     public class Program
     {
+        public static string uniqueid { get; set; }
+
         public static void Main(string[] args)
         {
+            uniqueid = new Random().Next(100).ToString();
             var uri = Cluster.Bootstrap(new WebApiProvider(), new ConsulProvider(), "valueapi", "v1");
             CreateWebHostBuilder(args, uri).Build().Run();
         }

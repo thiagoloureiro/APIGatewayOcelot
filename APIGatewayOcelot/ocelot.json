@@ -5,11 +5,6 @@
       "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/getvalues",
       "UpstreamHttpMethod": [ "Get" ],
-      "FileCacheOptions": { "TtlSeconds": 10 },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "AuthScheme",
-        "AllowedScopes": []
-      },
       "ServiceName": "valueapi",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"

@@ -9,6 +9,7 @@ using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
 using System;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace APIGatewayOcelot
 {
@@ -38,34 +39,23 @@ namespace APIGatewayOcelot
         public async void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseAuthentication();
+            app.UseAuthorization();
             await app.UseOcelot();
         }
 
         private void JwtConfiguration(IServiceCollection services)
         {
-            var audienceConfig = Configuration.GetSection("Audience");
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(audienceConfig["Secret"]));
-            var tokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = signingKey,
-                ValidateIssuer = true,
-                ValidIssuer = audienceConfig["Iss"],
-                ValidateAudience = true,
-                ValidAudience = audienceConfig["Aud"],
-                ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero,
-                RequireExpirationTime = true,
-            };
-
-            services.AddAuthentication(o =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
-                    o.DefaultAuthenticateScheme = "AuthScheme";
-                })
-                .AddJwtBearer("AuthScheme", x =>
-                {
-                    x.RequireHttpsMetadata = false;
-                    x.TokenValidationParameters = tokenValidationParameters;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                            .GetBytes(Configuration.GetSection("Audience:Secret").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
                 });
         }
     }

@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "be7e4ff1-fc3a-4a21-a0dd-12cc8cb1232e",
+		"name": "Ocelot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/auth/api/auth?name=user&pwd=123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/auth/api/auth?name=user&pwd=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"api",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "user"
+						},
+						{
+							"key": "pwd",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/valueapi/api/values",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyIiwianRpIjoiZmYxYWEyMzYtNzc0YS00N2M0LWI0YWQtMDYzYzFjYzgzNGJhIiwiaWF0IjoiMDYvMDgvMjAyMCAxMDowMTozMCIsIm5iZiI6MTU5NjcwODA5MCwiZXhwIjoxNTk2NzExNjkwLCJpc3MiOiJodHRwOi8vd3d3LnNpdGUuY29tIiwiYXVkIjoiQXVkaWVuY2UifQ.zLIRVaXV5gAz30EjQh2BjqO2aYujpg54JLhhsgXIKbs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/valueapi/api/values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"valueapi",
+						"api",
+						"values"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

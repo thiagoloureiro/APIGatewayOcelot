@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Ocelot.Cache;
 using Ocelot.Cache.CacheManager;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
-using System;
+using Ocelot.Provider.Polly;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace APIGatewayOcelot
 {
@@ -27,12 +29,26 @@ namespace APIGatewayOcelot
         {
             JwtConfiguration(services);
 
-            services.AddOcelot()
-                 .AddCacheManager(x =>
-                 {
-                     x.WithDictionaryHandle();
-                 })
-                .AddConsul();
+            services
+                .AddOcelot(new ConfigurationBuilder()
+                    .AddJsonFile("ocelot.json")
+                    .Build())
+                .AddConsul()
+                .AddPolly()
+                .AddCacheManager(x => x.WithDictionaryHandle());
+            //   .AddAdministration("/administration", "secret");
+            //                .AddAdministration("/administration", options);
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
+            //.AddIdentityServerAuthentication("TestKey", options);
+
+            services.AddSingleton<IOcelotCache<CachedResponse>, MyRedisCache>();
+
+            //RedisHelper.Initialization(new CSRedis.CSRedisClient("localhost"));
+
+            services.AddApplicationInsightsTelemetry();
+
+            services.AddSingleton<IDistributedCache>(new Microsoft.Extensions.Caching.Redis.CSRedisCache(RedisHelper.Instance));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

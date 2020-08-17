@@ -1,42 +1,39 @@
 ﻿{
-  "ReRoutes": [
+  "Routes": [
     {
-      "DownstreamPathTemplate": "/api/values",
+      "DownstreamPathTemplate": "/3/{everything}/offlinedata2/{everything1}/{everything2}",
       "DownstreamScheme": "http",
-      "UpstreamPathTemplate": "/getvalues",
-      "UpstreamHttpMethod": [ "Get" ],
-      "FileCacheOptions": { "TtlSeconds": 10 },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "AuthScheme",
-        "AllowedScopes": []
-      },
-      "ServiceName": "valueapi",
-      "LoadBalancerOptions": {
-        "Type": "LeastConnection"
-      }
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "www1009.test.abb.com",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/abbconnect/3/{everything}/offlinedata2/{everything1}/{everything2}",
+      "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/auth",
+      "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
-      "ServiceName": "auth",
-      "UpstreamPathTemplate": "/api/auth",
-      "UpstreamHttpMethod": [ "Get" ]
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "www1009.test.abb.com",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/abbconnect/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "somename"
+      },
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 2000,
+        "TimeoutValue": 180000
+      }
     }
   ],
-  "GlobalConfiguration": {
-    "RequestIdKey": null,
-    "ServiceDiscoveryProvider": {
-      "Host": "localhost",
-      "Port": 8500,
-      "Type": "Consul"
-    },
-    "RateLimitOptions": {
-      "ClientIdHeader": "ClientId",
-      "QuotaExceededMessage": "",
-      "RateLimitCounterPrefix": "",
-      "DisableRateLimitHeaders": false,
-      "HttpStatusCode": 428
-    },
-    "DownstreamScheme": "http"
-  }
+
+  "DownstreamScheme": "https"
 }

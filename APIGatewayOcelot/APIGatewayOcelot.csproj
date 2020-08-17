@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Caching.CSRedis" Version="3.6.5" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.14.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.7.1" />
@@ -23,6 +25,11 @@
     <PackageReference Include="Ocelot" Version="16.0.1" />
     <PackageReference Include="Ocelot.Cache.CacheManager" Version="16.0.1" />
     <PackageReference Include="Ocelot.Provider.Consul" Version="16.0.1" />
+    <PackageReference Include="Ocelot.Provider.Polly" Version="16.0.1" />
+    <PackageReference Include="Polly" Version="7.2.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.1.58" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties ocelot_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

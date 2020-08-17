@@ -10,7 +10,7 @@ namespace ValuesAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        [Authorize]
+        // [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {

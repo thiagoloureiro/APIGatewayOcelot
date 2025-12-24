@@ -13,6 +13,18 @@
         {
           "Host": "localhost",
           "Port": 8082
+        },
+        {
+          "Host": "localhost",
+          "Port": 8083
+        },
+        {
+          "Host": "localhost",
+          "Port": 8084
+        },
+        {
+          "Host": "localhost",
+          "Port": 8085
         }
       ],
       "LoadBalancerOptions": {

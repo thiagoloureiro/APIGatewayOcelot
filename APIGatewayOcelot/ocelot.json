@@ -4,7 +4,7 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "UpstreamPathTemplate": "/{anything}",
       "DownstreamPathTemplate": "/{anything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",

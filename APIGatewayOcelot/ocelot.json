@@ -13,10 +13,6 @@
         {
           "Host": "localhost",
           "Port": 8082
-        },
-        {
-          "Host": "localhost",
-          "Port": 8083
         }
       ],
       "LoadBalancerOptions": {

@@ -7,7 +7,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "ip-172-31-11-32.sa-east-1.compute.internal",
+          "Host": "localhost",
           "Port": 80
         }
       ]

@@ -1,5 +1,5 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
-RUN apt get update && apt get install curl -y
+RUN apt-get update && apt-get install -y curl
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080

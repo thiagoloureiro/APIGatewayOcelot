@@ -8,7 +8,11 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 80
+          "Port": 8081
+        },
+        {
+          "Host": "localhost",
+          "Port": 8082
         }
       ]
     }

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,6 +10,9 @@
     <Compile Remove="wwwroot\**" />
     <Content Remove="Controllers\**" />
     <Content Remove="wwwroot\**" />
+    <Content Include="..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
     <EmbeddedResource Remove="Controllers\**" />
     <EmbeddedResource Remove="wwwroot\**" />
     <None Remove="Controllers\**" />

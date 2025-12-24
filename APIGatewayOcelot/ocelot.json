@@ -1,42 +1,19 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/values",
-      "DownstreamScheme": "http",
-      "UpstreamPathTemplate": "/getvalues",
-      "UpstreamHttpMethod": [ "Get" ],
-      "FileCacheOptions": { "TtlSeconds": 10 },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "AuthScheme",
-        "AllowedScopes": []
-      },
-      "ServiceName": "valueapi",
-      "LoadBalancerOptions": {
-        "Type": "LeastConnection"
-      }
-    },
-    {
-      "DownstreamPathTemplate": "/api/auth",
-      "DownstreamScheme": "http",
-      "ServiceName": "auth",
-      "UpstreamPathTemplate": "/api/auth",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
+      "UpstreamPathTemplate": "/{anything}",
+      "DownstreamPathTemplate": "/{anything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api-sco",
+          "Port": 8081
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
-    "RequestIdKey": null,
-    "ServiceDiscoveryProvider": {
-      "Host": "localhost",
-      "Port": 8500,
-      "Type": "Consul"
-    },
-    "RateLimitOptions": {
-      "ClientIdHeader": "ClientId",
-      "QuotaExceededMessage": "",
-      "RateLimitCounterPrefix": "",
-      "DisableRateLimitHeaders": false,
-      "HttpStatusCode": 428
-    },
-    "DownstreamScheme": "http"
+    "BaseUrl": "http://localhost:5555" 
   }
 }

@@ -14,10 +14,13 @@
           "Host": "localhost",
           "Port": 8082
         }
-      ]
+      ],
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://+:9999" 
+    "BaseUrl": "http://+:9999"
   }
 }

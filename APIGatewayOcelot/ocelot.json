@@ -18,6 +18,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:9999" 
+    "BaseUrl": "http://+:9999" 
   }
 }

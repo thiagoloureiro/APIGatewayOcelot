@@ -1,26 +1,67 @@
-﻿{
+{
   "Routes": [
     {
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
-      "UpstreamPathTemplate": "/{anything}",
-      "DownstreamPathTemplate": "/{anything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8081
-        },
-        {
-          "Host": "localhost",
-          "Port": 8082
+          "Host": "alerthawk-auth.alerthawk.svc.cluster.local",
+          "Port": 8080
         }
-      ],
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin"
-      }
+      ]
+    },
+    {
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "UpstreamPathTemplate": "/finops/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "alerthawk-finops-api.alerthawk.svc.cluster.local",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "UpstreamPathTemplate": "/metrics/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "alerthawk-metrics-api.alerthawk.svc.cluster.local",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "UpstreamPathTemplate": "/monitoring/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "alerthawk-monitoring.alerthawk.svc.cluster.local",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
+      "UpstreamPathTemplate": "/notification/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "alerthawk-notification.alerthawk.svc.cluster.local",
+          "Port": 8080
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://+:9999"
+    "BaseUrl": "http://+:8080"
   }
 }

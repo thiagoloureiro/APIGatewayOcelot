@@ -12,7 +12,7 @@ namespace APIGatewayOcelot
             new WebHostBuilder()
                 .UseKestrel(options =>
                 {
-                    options.ListenAnyIP(9999);
+                    options.ListenAnyIP(8080);
                 })
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

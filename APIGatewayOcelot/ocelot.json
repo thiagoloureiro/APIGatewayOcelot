@@ -3,7 +3,7 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
       "UpstreamPathTemplate": "/auth/{everything}",
-      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamPathTemplate": "/auth/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -15,7 +15,7 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
       "UpstreamPathTemplate": "/finops/{everything}",
-      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamPathTemplate": "/finops/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -27,7 +27,7 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
       "UpstreamPathTemplate": "/metrics/{everything}",
-      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamPathTemplate": "/metrics/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -39,7 +39,7 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
       "UpstreamPathTemplate": "/monitoring/{everything}",
-      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamPathTemplate": "/monitoring/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -51,7 +51,7 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch", "Options" ],
       "UpstreamPathTemplate": "/notification/{everything}",
-      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamPathTemplate": "/notification/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {

@@ -27,7 +27,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
     <PackageReference Include="Ocelot" Version="25.0.0" />
     <PackageReference Include="Ocelot.Cache.CacheManager" Version="25.0.0" />
-    <PackageReference Include="Ocelot.Provider.Consul" Version="24.1.0" />
+    <PackageReference Include="Ocelot.Discovery.Consul" Version="25.0.1" />
     <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.17.0" />
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.17.0" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.17.0" />
